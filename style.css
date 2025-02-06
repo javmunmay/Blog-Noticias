@@ -1,0 +1,136 @@
+/* style.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Usaremos una fuente moderna */
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f7f7ff, #eef2ff); /* Degradado suave para el fondo */
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+article {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    width: 100%;
+    max-width: 700px;
+}
+
+article:hover {
+    transform: translateY(-10px); /* Levanta ligeramente el artículo al pasar el mouse */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al interactuar */
+}
+
+article h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2980b9; /* Color azul vibrante para los títulos */
+    position: relative;
+}
+
+article h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2980b9;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+article h2:hover::before {
+    transform: scaleX(1); /* Línea debajo del título al pasar el mouse */
+}
+
+article p strong {
+    color: #e74c3c;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Botón "Leer más" */
+article .read-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+article .read-more:hover {
+    background: #21618c; /* Oscurece el botón al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    article h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    article h2 {
+        font-size: 1.3em;
+    }
+}
